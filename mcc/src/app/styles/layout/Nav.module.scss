@@ -1,0 +1,17 @@
+.nav_area {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 0;
+    margin: auto;
+    background-color: #fff;
+    height: 100vh;
+}
+
+.layout {
+    font-family: var(--font-pretendard);
+    overflow-x: hidden;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: var(--margin-bg-color);
+}

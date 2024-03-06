@@ -1,0 +1,61 @@
+// _grid.scss
+
+// 예시 그리드 시스템
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    padding: 0 15px;
+}
+
+// 반응형 그리드
+@media (min-width: 768px) {
+    .col {
+        flex: 0 0 50%; // 데스크탑 화면에서는 2개의 열로 나뉨
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+}
+
+.mcc_view_area {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 0;
+    margin: auto;
+    background-color: #fff;
+    height: 100vh;
+}
+
+  .navbar {
+      background-color: #ddd;
+      padding: 20px;
+  }
+
+  .navbar a {
+      margin-right: 10px;
+      text-decoration: none;
+  }
+  .card_item {
+      width: 100px;
+  }
+
+  .card_img {
+      width: 100%;
+      height: auto;
+  }

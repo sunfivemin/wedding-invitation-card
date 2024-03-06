@@ -1,0 +1,7 @@
+// 전역 스타일 import
+@import 'variables';
+@import 'globals';
+
+// mixins
+@import './mixins/animations'; 
+@import './mixins/grid'; 
