@@ -4,7 +4,27 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-width: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar {
+    background-color: transparent;
+    width: 1rem;
+    height: 1rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #e2c1c5;
+    border-radius: 1rem;
+    background-clip: padding-box;
+    border: 0.2rem solid transparent;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #fdfafa;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 0.5rem #fff;
 }
 
 body {
@@ -14,8 +34,8 @@ body {
     max-width: 100%;
     background: var(--margin-bg-color);
     -webkit-touch-callout: none;
-    // display: flex;
-    // flex-direction: column;
+    display: flex;
+    flex-direction: column;
     min-height: 100%;
 }
 
@@ -28,8 +48,8 @@ html {
     overflow-x: hidden;
     margin: 0 auto;
     max-width: var(--max-width);
+    width: var(--max-width);
     background: var(--margin-bg-color);
-    -webkit-touch-callout: none;
 }
 
 .sr_hidden {
@@ -61,6 +81,32 @@ a {
     overflow: hidden;
     touch-action: none;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: $pink-bg-color-02;
+    color: $black-text-color;
+    padding: $spacing-small $spacing-medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+
+    &:hover {
+        background-color: $pink-bg-color-01;
+        color: $pink-text-color;
+    }
+}
+
+.selected .category_btn {
+    background-color: darken($primary-color, 10%);
+    color: $white-text-color;
+}
+
 @font-face {
     font-family: "Pretendard";
     font-weight: 200;
@@ -93,18 +139,24 @@ a {
     font-display: swap;
 }
 
-.button {
-    background-color: $primary-color;
-    color: white;
-    padding: $spacing-small $spacing-medium;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+@font-face {
+    font-family: "MapoFlowerIsland";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
 
-    &:hover {
-        background-color: darken($primary-color, 10%);
-    }
+@font-face {
+    font-family: "RIDIBatang";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Parisienne";
+    src: url("/fonts/Parisienne-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 :root {
@@ -116,6 +168,12 @@ a {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
+    --color-pink-bg: #fdfafa;
+    --color-pink-text: #e2c1c5;
+    --border-color: #f9f5f5;
+    --color-white: #fff;
+    --divider-bg-pink: url("../../../public/img/mask-pink.png");
+    --divider-bg-white: url("../../../public/img/mask-white.png");
 
     --primary-glow: conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
     --secondary-glow: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
@@ -128,4 +186,84 @@ a {
     --callout-border-rgb: 172, 175, 176;
     --card-rgb: 180, 185, 188;
     --card-border-rgb: 131, 134, 135;
+
+    --divider-linear-gradient: linear-gradient(180deg, transparent, #fff);
+}
+
+.Snow {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+.Snowflake {
+    display: inline-block;
+    width: 0.1%;
+    color: #fffafa;
+    opacity: 0;
+    font-size: 120px;
+    margin: 0;
+    padding: 0;
+    animation: fall 16s linear infinite;
+    font-family: MapoFlowerIsland;
+}
+
+.bgm_btn_container {
+    position: fixed;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    z-index: 10;
+}
+
+.bgm_btn {
+    position: relative;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 100%;
+    padding: 0.36rem;
+    cursor: pointer;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 0;
+    }
+    3% {
+        opacity: 0.9;
+    }
+
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(0, 97vh);
+        opacity: 0;
+    }
+}
+
+.modal_area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 400ms, 0s;
+    overflow-y: scroll;
+    z-index: 100;
+}
+
+.modal_opened {
+    opacity: 100;
+    visibility: visible;
+    transition-property: opacity, visibility;
+    transition-duration: 400ms, 0s;
 }

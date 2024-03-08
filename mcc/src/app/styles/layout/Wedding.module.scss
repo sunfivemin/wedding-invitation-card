@@ -1,0 +1,268 @@
+.layout {
+    font-family: var(--font-pretendard);
+    // overflow-x: hidden;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: var(--margin-bg-color);
+    font-family: MapoFlowerIsland;
+    // font-weight: 600;
+    background-color: #fff;
+}
+
+.main_area {
+    position: relative;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.25em;
+    white-space: break-spaces;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    &::after {
+        content: "";
+        background: var(--divider-linear-gradient);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        line-height: 0;
+        width: 100%;
+        height: 100px;
+    }
+}
+
+.top_info_area {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    word-break: break-all;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0%;
+    padding: 2.55rem 1rem;
+}
+
+.bride_name,
+.groom_name {
+    width: 100%;
+}
+
+.wedding_day_con {
+    width: 17rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.wedding_month {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin-right: 2.9rem;
+    letter-spacing: 0.1em;
+}
+.wedding_day {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin-left: 2.9rem;
+    letter-spacing: 0.1em;
+}
+.wedding_hr {
+    transform: rotate(-45deg) translate(6px, 7px);
+    border-top: 1px solid var(--margin-bg-color);
+    width: 4.9rem;
+}
+
+.petal_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.info_txt_area {
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    padding: 2rem 2rem 6rem;
+    letter-spacing: 0em;
+    color: var(--margin-bg-color);
+    white-space: break-spaces;
+    text-align: center;
+    word-break: break-all;
+}
+
+.editor_section_poetry {
+    position: relative;
+    background-color: var(--color-pink-bg);
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    text-align: center;
+    padding: 4rem 0 7rem;
+    overflow: visible;
+    font-family: RIDIBatang;
+    letter-spacing: -0.05em;
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-break: break-all;
+    color: var(--margin-bg-color);
+
+    &::before {
+        content: "";
+        background-image: var(--divider-bg-pink);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        overflow: hidden;
+        line-height: 0;
+        width: 100%;
+        height: 20px;
+    }
+
+    & p {
+        display: block;
+        border-bottom: 1px solid #faefef;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1.6rem;
+        line-height: 3.2rem;
+    }
+}
+
+.flower_img {
+    width: 3rem;
+    height: auto;
+    margin-bottom: 3rem;
+}
+
+.section_paragraph_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.editor_section_invitation {
+    position: relative;
+    background-color: var(--color-pink-bg);
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    text-align: center;
+    padding: 0 0 7rem;
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-break: break-all;
+    color: var(--margin-bg-color);
+}
+
+.subtitle {
+    color: var(--color-pink-text);
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.invitation_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    letter-spacing: -0.05em;
+}
+
+.editor_section_picture {
+    position: relative;
+    background-color: var(--color-pink-bg);
+    padding: 0 2rem;
+    display: block;
+    overflow: hidden;
+
+    & img {
+        width: 100%;
+        height: auto;
+        border-radius: 1.2rem;
+        display: block;
+        overflow: hidden;
+    }
+}
+
+.editor_section_family {
+    position: relative;
+    background-color: var(--color-pink-bg);
+    padding: 4rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    text-align: center;
+}
+
+.family_area {
+    display: flex;
+    justify-content: center;
+}
+
+.family_name {
+    padding: 0 0.2rem;
+    font-size: 1.9rem;
+}
+
+.family_text {
+    padding: 0 0.4rem;
+    min-width: 2.6em;
+}
+
+.editor_section_contact {
+    position: relative;
+    background-color: var(--color-pink-bg);
+    padding: 0 0 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+        content: "";
+        background-image: var(--divider-bg-white);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        overflow: hidden;
+        line-height: 0;
+        width: 100%;
+        height: 20px;
+        // transform: translate(0, 0) rotate(-180deg);
+    }
+}
+
+.contact_button {
+    width: 20rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--border-color);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: -.025em;
+    font-family: MapoFlowerIsland;
+
+    &:hover {
+        background-color: #FBF5F5;
+        color: #D08C95;
+    }
+}
+
+.editor_section_calendar {
+    height: 1000px;
+}
